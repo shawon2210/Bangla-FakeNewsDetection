@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+*.pth
+*.pt
+outputs/
+runs/
+checkpoints/
+gradio_cached_examples/
+*.png
+*.jpg
+*.jpeg
+features/
+
+# Data (large files)
+*.csv
+!Train.csv
+!Validation.csv
+!Test.csv

@@ -1,0 +1,98 @@
+# Configuration file for Bangla Fake News Detection Model
+
+# Model Configuration
+model:
+  text_model_name: "csebuetnlp/banglabert"
+  num_classes: 2
+  text_feature_dim: 512
+  image_feature_dim: 512
+  fusion_dim: 256
+  dropout_rate: 0.3
+  freeze_text_layers: 6
+  freeze_image_layers: 4
+
+# Training Configuration
+training:
+  batch_size: 16
+  epochs: 20
+  text_lr: 1e-5
+  image_lr: 1e-4
+  other_lr: 1e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0
+
+# Early Stopping
+early_stopping:
+  patience: 7
+  min_delta: 0.001
+  restore_best_weights: true
+
+# Data Configuration
+data:
+  max_text_length: 128
+  image_size: 224
+  image_folder: "images"
+  train_csv: "Train.csv"
+  val_csv: "Validation.csv"
+  test_csv: "Test.csv"
+
+# Logging and Checkpoints
+logging:
+  log_dir: "runs"
+  checkpoint_dir: "checkpoints"
+  save_every: 5
+  model_save_path: "models/optimized_bangla_fake_news.pth"
+
+# Inference Configuration
+inference:
+  batch_size: 32
+  confidence_threshold: 0.5
+  max_inference_time: 5.0
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+    - roc_auc
+    - average_precision
+  plot_confusion_matrix: true
+  plot_roc_curve: true
+  plot_pr_curve: true
+  plot_class_metrics: true
+
+# Hardware Configuration
+hardware:
+  device: "auto"  # auto, cuda, cpu
+  num_workers: 4
+  pin_memory: true
+  mixed_precision: false
+
+# Research Configuration
+research:
+  ablation_studies:
+    text_only: false
+    image_only: false
+    attention_heads: [4, 8, 16]
+    fusion_methods: ["concat", "attention", "bilinear"]
+  
+  hyperparameter_tuning:
+    enabled: false
+    method: "optuna"  # optuna, ray, grid
+    n_trials: 100
+  
+  feature_analysis:
+    extract_features: true
+    save_features: false
+    feature_path: "features"
+
+# Deployment Configuration
+deployment:
+  api_server: "flask"  # flask, fastapi
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1
+  max_request_size: "16MB"

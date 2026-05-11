@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+*.pth
+*.pt
+outputs/
+runs/
+checkpoints/
+gradio_cached_examples/
+features/
+
+# Images (large binary files)
+images/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.jfif
+
+# Data (large files) — uncomment below if you want to track CSVs
+# *.csv
+# !BanglaFakeNewsProject/Train.csv
+# !BanglaFakeNewsProject/Validation.csv
+# !BanglaFakeNewsProject/Test.csv
