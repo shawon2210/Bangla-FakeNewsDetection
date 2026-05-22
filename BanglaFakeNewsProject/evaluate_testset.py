@@ -40,5 +40,8 @@ with open(TEST_CSV, encoding="utf-8") as f:
         results.append((image_id, pred, gold, is_correct))
         print(f"Sample {total}: Pred={pred}, Gold={gold}, {'✓' if is_correct else '✗'}")
 
+        if total >= 100:
+            break
+
 accuracy = correct / total if total else 0
 print(f"\nEvaluation complete: {correct}/{total} correct. Accuracy: {accuracy:.2%}")

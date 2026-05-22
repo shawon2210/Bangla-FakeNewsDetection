@@ -1,0 +1,30 @@
+[
+  {
+    "experiment": "BanglaBERT Text-Only Baseline",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "confusion_matrix": [
+      [
+        100
+      ]
+    ],
+    "best_val_acc": 1.0,
+    "epochs": 1
+  },
+  {
+    "experiment": "ResNet50 Image-Only Ablation",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "confusion_matrix": [
+      [
+        100
+      ]
+    ],
+    "best_val_acc": 1.0,
+    "epochs": 1
+  }
+]
